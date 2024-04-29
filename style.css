@@ -21,8 +21,6 @@ canvas {
   bottom: 0;
   left: 0;
   right: 0;
-
-  border:solid 10px blue;
 }
 
-/* game specific CSS */
+/* add your game specific CSS here */
