@@ -2,6 +2,32 @@ Deze repo is onderdeel van het vak informatica op het Emmauscollege Rotterdam.
 
 [Meer info over deze opdracht](https://informatica.emmauscollege.nl/)
 
+## Emmaus Arcade
+Als je wilt dat je game geschikt is voor Emmaus Arcade, zorg dan voor het volgende:
+- Zet alle bestanden die nodig zijn in je repository, inclusief plaatjes, geluiden en fonts.
+- Maak geen wijzigingen in gegeven code in index.html en style.css. Als je iets toevoegt, geef dat dan duidelijk met commentaar aan.
+- Zet een scherm-afbeelding van je game in `screenshot.jpg`. De afmeting moet ongeveer 300x188 pixels zijn.
+- Gebruik voor de bediening van je spel alleen toetsen die op de Arcade zitten.<br>
+  - Gebruik pijltjes, spatie en enter als je spel daar genoeg aan heeft. Het maakt dan niet uit of de speler de rode of blauwe controls gebruikt.
+  - Kies de rode controls voor ingewikkelder spellen. Gebruik rood en blauw voor nog ingewikkelder spellen.
+  - Bij spellen met 2 spelers kies je rood voor speler 1 en blauw voor speler 2.
+  ```
+  Rode joystick:           WASD & pijltjes
+  Rode knop linksboven:    shift-links & enter
+  Rode knop middenboven:   Q 
+  Rode knop rechtsboven:   E 
+  Rode knop linksonder:    Z & spatie
+  Rode knop middenonder:   X
+  Rode knop rechtsonder:   C
+  Blauwe joystick:         IJKL & pijltjes
+  Blauwe knop linksboven:  shift-rechts & enter
+  Blauwe knop middenboven: U
+  Blauwe knop rechtsboven: O
+  Blauwe knop linksonder:  B & spatie
+  Blauwe knop middenonder: N
+  Blauwe knop rechtsonder: M
+  ```
+
 ## Documentatie
 - Khan Academy cursus JavaScript met p5js library <br>
 https://www.khanacademy.org/computing/computer-programming/programming
