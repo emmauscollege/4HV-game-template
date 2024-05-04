@@ -13,16 +13,16 @@ Als je wilt dat je game geschikt is voor Emmaus Arcade, zorg dan voor het volgen
   - Bij spellen met 2 spelers kies je rood voor speler 1 en blauw voor speler 2.
   ```
   Rode joystick:           WASD & pijltjes
-  Rode knop linksboven:    shift-links & enter
-  Rode knop middenboven:   Q 
-  Rode knop rechtsboven:   E 
+  Rode knop linksboven:    Q & enter
+  Rode knop middenboven:   E 
+  Rode knop rechtsboven:   R 
   Rode knop linksonder:    Z & spatie
   Rode knop middenonder:   X
   Rode knop rechtsonder:   C
   Blauwe joystick:         IJKL & pijltjes
-  Blauwe knop linksboven:  shift-rechts & enter
-  Blauwe knop middenboven: U
-  Blauwe knop rechtsboven: O
+  Blauwe knop linksboven:  U & enter
+  Blauwe knop middenboven: O
+  Blauwe knop rechtsboven: P
   Blauwe knop linksonder:  B & spatie
   Blauwe knop middenonder: N
   Blauwe knop rechtsonder: M
