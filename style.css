@@ -7,10 +7,8 @@ html, body {
 
 canvas {
   /* resize to full window while keeping aspect ratio */
-  /* scale: 2 zooms canvas in case it is smaller than viewport */
-  max-width: calc(100vw / 2);
-  max-height: calc(100vh / 2);
-  scale: 2;
+  width:100% !important;
+  height:100% !important;
   object-fit: contain;
 
   /* align horizontally and vertically centered */
