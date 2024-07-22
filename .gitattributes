@@ -1,9 +1,0 @@
-# this fixes replit auto-detect language for this repo
-# replit auto-detect language is based on github statistics
-# exclude files and directories in github statistics
-*.ts linguist-vendored
-*.js linguist-vendored
-.* linguist-vendored
-.*/** linguist-vendored
-# now html/css/js should be detected as primary language by replit when importing this repo
-# when the language detection is still wrong, you can change it manually during the import of the repo in replit
