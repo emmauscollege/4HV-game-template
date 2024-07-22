@@ -11,7 +11,5 @@
 
   //"files.exclude": { // hide files in vscode
   //  ".*": true,
-  //  "p5.d.ts": true,
-  //  "p5.global-mode.d.ts": true,
   //}
 }
