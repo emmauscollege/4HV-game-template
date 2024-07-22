@@ -9,7 +9,7 @@
 /*
  * instellingen om foutcontrole van je code beter te maken 
  */
-///<reference path="p5.global-mode.d.ts" />
+///<reference path=".vscode/p5.global-mode.d.ts" />
 "use strict"
 
 /* ********************************************* */
