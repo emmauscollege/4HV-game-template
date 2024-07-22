@@ -9,4 +9,6 @@ tasks:
     command: >
 vscode:
   extensions:
-    - mhutchie.git-graph
+    - mhutchie.git-graph # add graphical viewer for branches and commits, click on button in Source-Code tab
+
+    
