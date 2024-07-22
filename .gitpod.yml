@@ -9,7 +9,6 @@ tasks:
     command: >
 vscode:
   extensions:
-    - ms-vsliveshare.vsliveshare # add google-docs like typing in same file, click on live-share button in left icon pane
     - mhutchie.git-graph # add graphical viewer for branches and commits, click on button in Source-Code tab
 
     
