@@ -1,109 +1,92 @@
-/* Game opdracht
-   Informatica - Emmauscollege Rotterdam
-   Template voor een game in JavaScript met de p5 library
+// This example is also available online in the p5.js web editor:
+// https://editor.p5js.org/gohai/sketches/X0XD9xvIR
 
-   Begin met dit template voor je game opdracht,
-   voeg er je eigen code aan toe.
- */
+let port;
+let connectButton;
 
-/*
- * instellingen om foutcontrole van je code beter te maken 
- */
-///<reference path=".vscode/p5.global-mode.d.ts" />
-"use strict"
+let frames = 0;
+let ledIsAan = false;
 
-/* ********************************************* */
-/* globale variabelen die je gebruikt in je game */
-/* ********************************************* */
-const SPELEN = 1;
-const GAMEOVER = 2;
-var spelStatus = SPELEN;
-
-var spelerX = 600; // x-positie van speler
-var spelerY = 600; // y-positie van speler
-var health = 100;  // health van speler
-
-/* ********************************************* */
-/* functies die je gebruikt in je game           */
-/* ********************************************* */
-
-/**
- * Updatet globale variabelen met posities van speler, vijanden en kogels
- */
-var beweegAlles = function() {
-  // speler
-
-  // vijand
-
-  // kogel
-};
-
-/**
- * Checkt botsingen
- * Verwijdert neergeschoten dingen
- * Updatet globale variabelen punten en health
- */
-var verwerkBotsing = function() {
-  // botsing speler tegen vijand
-
-  // botsing kogel tegen vijand
-
-  // update punten en health
-
-};
-
-/**
- * Tekent spelscherm
- */
-var tekenAlles = function() {
-  // achtergrond
-
-  // vijand
-
-  // kogel
-
-  // speler
-  fill("white");
-  rect(spelerX - 25, spelerY - 25, 50, 50);
-  fill("black");
-  ellipse(spelerX, spelerY, 10, 10);
-
-  // punten en health
-
-};
-
-/* ********************************************* */
-/* setup() en draw() functies / hoofdprogramma   */
-/* ********************************************* */
-
-/**
- * setup
- * de code in deze functie wordt één keer uitgevoerd door
- * de p5 library, zodra het spel geladen is in de browser
- */
 function setup() {
-  // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
-  createCanvas(1280, 720);
+  createCanvas(300, 600);
 
-  // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('blue');
+  // any other ports can be opened via a dialog after
+  // user interaction (see connectBtnClick below)
+
+  connectButton = createButton('Connect');
+  connectButton.position(80, 200);
+  connectButton.mousePressed(connectArduino);
+
+  ledButton = createButton('Led');
+  ledButton.position(80, 250);
+  ledButton.mousePressed(toggleLed);
 }
 
-/**
- * draw
- * de code in deze functie wordt 50 keer per seconde
- * uitgevoerd door de p5 library, nadat de setup functie klaar is
- */
 function draw() {
-  if (spelStatus === SPELEN) {
-    beweegAlles();
-    verwerkBotsing();
-    tekenAlles();
-    if (health <= 0) {
-      spelStatus = GAMEOVER;
+  background(175, 144, 105);
+  
+  // doe zolang er berichten voor je klaarstaan
+  while (messageAvailable()) {
+    // haal nieuw bericht op
+    let message = getMessage();
+    
+    // mag je weghalen: print dit bericht in de console:
+    console.log("ik ga aan de slag met:" + message);
+
+    // verwerk bericht
+    executeMessage(message)
+  }
+}
+
+function executeMessage(message) {
+  // splits het bericht in twee delen
+  let delen = message.split(":");
+  if (delen.length === 2) {
+    // bericht heeft twee delen: commando en waarde
+    // we kunnen hiermee aan de slag
+    let commando = delen[0];
+    let waarde = delen[1];
+
+    if (commando === "melding") {
+      alert("Melding van Arduino: " + waarde);
+    }
+
+    // vul aan met je eigen commando's en waarden
+
+
+  }
+  else {
+    console.log("Het bericht heeft geen twee onderdelen: " + message);
+  }
+
+
+}
+
+function toggleLed() {
+  // check eerst of er een seriële verbinding met de Arduino is
+  if (port) {
+    if (ledIsAan === true) {
+      // stuur bericht om led uit te zetten
+      sendMessage("lod:0");
+      ledIsAan = false;
+    }
+    else {
+      // stuur bericht om led aan te zetten
+      sendMessage("led:1");
+      ledIsAan = true;
     }
   }
-  if (spelStatus === GAMEOVER) {
-    // teken game-over scherm
+}
+
+function connectArduino() {
+  if (port) {
+    port.close();
+    port = undefined;
+
+    connectButton.html("Connect");
+  }
+  else {
+    getReader();
+    connectButton.html("Disconnect");
   }
 }
