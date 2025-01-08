@@ -67,7 +67,7 @@ function toggleLed() {
   if (port) {
     if (ledIsAan === true) {
       // stuur bericht om led uit te zetten
-      sendMessage("lod:0");
+      sendMessage("led:0");
       ledIsAan = false;
     }
     else {
