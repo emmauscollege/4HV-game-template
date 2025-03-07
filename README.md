@@ -1,6 +1,6 @@
 Deze repo is onderdeel van het vak informatica op het Emmauscollege Rotterdam.
 
-[Meer info over deze opdracht](https://informatica.emmauscollege.nl/)
+[Meer info over deze opdracht](https://informatica.emmauscollege.nl/opdrachten/game/)
 
 ## Emmaus Arcade
 Als je wilt dat je game geschikt is voor Emmaus Arcade, zorg dan voor het volgende:
